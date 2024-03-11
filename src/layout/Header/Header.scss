@@ -1,0 +1,13 @@
+@import './NavHeader/NavHeader';
+@import './Logo/Logo';
+
+header{
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 50px;
+}
+

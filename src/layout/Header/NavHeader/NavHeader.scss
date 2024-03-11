@@ -1,0 +1,15 @@
+header ul {
+    width: 309px;
+    height: 34px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 57px;
+    font-size: 2.4rem;
+    color: #000;
+    text-align: right;
+    font-family: Montserrat;
+    font-weight: 500;
+    & li:hover {
+        text-decoration: underline;
+    }
+}

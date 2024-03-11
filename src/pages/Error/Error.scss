@@ -1,0 +1,26 @@
+.page-error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding-bottom: 90px;
+    h1 {
+        color: $primary;
+        font-size: 28.8rem;
+        font-weight: 700;
+    }
+    p {
+        color: $primary;
+        font-size: 3.6rem;
+        font-weight: 500;
+    }
+    &__home-link {
+        padding-top: 40px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
