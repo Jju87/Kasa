@@ -1,0 +1,28 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    .banner-about {
+        object-fit: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 25px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+    section {
+        padding: 0px 110px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
