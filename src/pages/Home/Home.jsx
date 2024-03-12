@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
+import bannerHome from '../../assets/images/bg-banner_forest.png'
+import '../Home/Home.scss';
 
 
 function Home() {
@@ -9,7 +11,10 @@ function Home() {
       document.title = `Acceuil - Kasa`;
     }, []);
   return (
-    <div>
+    <div className="home-container">
+      <div className="banner-home">
+        <img src={bannerHome} alt="Vue sur une forêt" />
+      </div>
       <h1>Home</h1>
       <article>
         <Link to={`/fiche-logement/${LocationNumber[0]}`}>
