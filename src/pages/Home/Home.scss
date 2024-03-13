@@ -1,4 +1,4 @@
-@import "../../styles/main.scss";
+@import "../../styles/variables.scss";
 
 .home-container {
     display: flex;
@@ -10,11 +10,21 @@
             content: "Chez vous, partout et ailleurs";
             color: #FFF;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-            font-size: 4.8rem;
+            font-size: 4.3rem;
             font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
             }
     }
+    .cards-gallery{
+        background-color: $secondary ;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 35px;
+        padding: 35px;
+    }
 }
+
