@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.carousel {
+    width: 100%;
+    position: relative;
+    height: 415px;
+    overflow: hidden;
+    border-radius: 25px;
+    &__picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: ease-in-out 0.5s;
+    }
+    &__arrow-left {
+        @include next-prev-arrow;
+        left: 0;
+        transform: rotate(180deg);
+        &:hover {
+            cursor: pointer;
+        }
+        &--icon {
+            transform: translateX(20px) translateY(167px);
+        }
+    }
+    &__arrow-right {
+        @include next-prev-arrow;
+        right: 0;
+        &:hover {
+            cursor: pointer;
+        }
+        &--icon {
+            transform: translateX(20px) translateY(167px);
+        }
+    }
+}

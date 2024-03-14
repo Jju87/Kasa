@@ -34,7 +34,7 @@ function Home() {
                 <img src={bannerHome} alt="Vue sur une forêt" />
             </div>
             <section className="cards-gallery">
-                {data.map((rental) => {
+                {data.map((rental,) => {
                     return (
                         <Link
                             to={`/Fiche-Logement/${rental.id}`}

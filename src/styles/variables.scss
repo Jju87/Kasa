@@ -1,12 +1,12 @@
 $max-width: 1240px;
 
 $primary: #ff6060;
-$secondary:#F6F6F6;
+$secondary: #f6f6f6;
 $greyLight: #f7f7f7;
 $greyDark: #c4c4c4;
 $grey: #e3e3e3;
 
-@mixin banner{
+@mixin banner {
     object-fit: cover;
     display: flex;
     align-items: center;
@@ -22,4 +22,13 @@ $grey: #e3e3e3;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.4);
     }
-    }
+}
+
+@mixin next-prev-arrow {
+    width: 80px;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(2px); // Add blurred effect
+    position: absolute;
+    top: 0;
+}
