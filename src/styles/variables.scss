@@ -50,10 +50,8 @@ $grey: #e3e3e3;
     
 //styles des flèches de carousel
 @mixin next-prev-arrow {
-    width: 80px;
+    width: 10%;
     height: 100%;
     background-color: transparent;
-    backdrop-filter: blur(2px); // Add blurred effect
     position: absolute;
-    top: 0;
 }

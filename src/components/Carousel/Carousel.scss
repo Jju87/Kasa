@@ -15,22 +15,63 @@
     &__arrow-left {
         @include next-prev-arrow;
         left: 0;
-        transform: rotate(180deg);
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &:hover {
             cursor: pointer;
         }
         &--icon {
-            transform: translateX(20px) translateY(167px);
+            height: 81px;
+            width: 60px;
+            transform: rotate(180deg);
         }
     }
     &__arrow-right {
         @include next-prev-arrow;
         right: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
         &:hover {
             cursor: pointer;
         }
         &--icon {
-            transform: translateX(20px) translateY(167px);
+            height: 81px;
+            width: 60px;
+        }
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .carousel {
+        height: 350px;
+        &__arrow-left {
+            &--icon {
+                width: 35px;
+            }
+        }
+        &__arrow-right {
+            &--icon {
+                width: 35px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel {
+        height: 255px;
+        &__arrow-left {
+            &--icon {
+                width: 24px;
+            }
+        }
+        &__arrow-right {
+            &--icon {
+                width: 24px;
+            }
         }
     }
 }

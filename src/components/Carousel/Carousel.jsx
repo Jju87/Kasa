@@ -15,7 +15,7 @@ function Carousel({ id, pictures }) {
     };
     // Utilise le hook useEffect pour changer d'image toutes les 4 secondes
     useEffect(() => {
-        const timer = setInterval(nextImage, 4000);
+        const timer = setInterval(nextImage, 8000);
         // Nettoie le timer
         return () => {
             clearInterval(timer);
@@ -29,18 +29,42 @@ function Carousel({ id, pictures }) {
                 src={pictures[currentIndex]}
                 alt="carousel"
             />
-            <svg className="carousel__arrow-left" onClick={prevImage}>
-                <use
+            <div className="carousel__arrow-left" onClick={prevImage}>
+                <svg
                     className="carousel__arrow-left--icon"
-                    xlinkHref={arrow + "#Vector_2"}
-                ></use>
-            </svg>
-            <svg className="carousel__arrow-right" onClick={nextImage}>
-                <use
+                    width="48"
+                    height="80"
+                    viewBox="0 0 48 80"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g id="Vector">
+                        <path
+                            id="Vector_2"
+                            d="M0.960022 72.3458L8.04002 79.4258L47.64 39.8258L8.04002 0.22583L0.960022 7.30583L33.48 39.8258L0.960022 72.3458Z"
+                            fill="white"
+                        />
+                    </g>
+                </svg>
+            </div>
+            <div className="carousel__arrow-right" onClick={nextImage}>
+                <svg
                     className="carousel__arrow-right--icon"
-                    xlinkHref={arrow + "#Vector_2"}
-                ></use>
-            </svg>
+                    width="48"
+                    height="80"
+                    viewBox="0 0 48 80"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g id="Vector">
+                        <path
+                            id="Vector_2"
+                            d="M0.960022 72.3458L8.04002 79.4258L47.64 39.8258L8.04002 0.22583L0.960022 7.30583L33.48 39.8258L0.960022 72.3458Z"
+                            fill="white"
+                        />
+                    </g>
+                </svg>
+            </div>
         </div>
     );
 }

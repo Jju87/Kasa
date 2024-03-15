@@ -12,7 +12,7 @@ function Rating ({rentalRating}){
 
         return (
             <FontAwesomeIcon
-            key={i} // Use index as key
+            key={i}
             className="icon"
             icon={faStar}
             color={ratingValue <= rentalRating ? '#ff6060' : '#e5e5e5'}
