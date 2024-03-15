@@ -6,6 +6,8 @@ $greyLight: #f7f7f7;
 $greyDark: #c4c4c4;
 $grey: #e3e3e3;
 
+// styles des banners
+
 @mixin banner {
     object-fit: cover;
     display: flex;
@@ -24,6 +26,29 @@ $grey: #e3e3e3;
     }
 }
 
+// transitions des collapses
+
+@mixin slide-down{
+    transition: 300ms ease-in;
+    overflow: hidden;
+    line-height: 0;
+    padding: 0 1em;
+    font-size: 1.8rem;
+    opacity: 0.5;
+    max-height: 0;
+}
+
+@mixin slide-up{
+    transition: 300ms 300ms ease-out;
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 1.8rem;
+    padding: 22px 15px;
+    opacity: 1;
+    max-height: 1000px;
+}
+    
+//styles des flèches de carousel
 @mixin next-prev-arrow {
     width: 80px;
     height: 100%;

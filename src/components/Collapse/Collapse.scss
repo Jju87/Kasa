@@ -1,24 +1,5 @@
 @import "../../styles/variables.scss";
 
-@mixin slide-down{
-    transition: 300ms ease-in;
-    overflow: hidden;
-    line-height: 0;
-    padding: 0 1em;
-    font-size: 1.8rem;
-    opacity: 0;
-}
-
-@mixin slide-up{
-    transition: 300ms 300ms ease-out;
-    overflow: hidden;
-    line-height: 1.5;
-    font-size: 1.8rem;
-    padding: 22px 15px;
-    opacity: 1;
-}
-    
-
 .collapse-container {
     width: 100%;
     gap: 30px;

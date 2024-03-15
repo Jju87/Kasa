@@ -1,0 +1,96 @@
+@import "../../styles/variables.scss";
+
+.fiche-logement-content {
+    width: 100%;
+    position: relative;
+    & h1 {
+        color: $primary;
+        font-size: 3.6rem;
+        font-weight: 500;
+        width: 70%;
+    }
+    &__subtitle {
+        color: #000;
+        font-size: 1.8rem;
+        margin-top: 20px;
+    }
+    &__who {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        border: 1px solid #e5e5e5;
+        gap: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        &--host {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            border: 1px solid black;
+            overflow: hidden;
+            gap: 10px;
+
+            & img {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+            }
+            & span {
+                color: #ff6060;
+                text-align: right;
+                font-size: 1.8rem;
+                font-weight: 500;
+                width: 93px;
+                height: 53px;
+                border: 1px solid #ff6060;
+                overflow: hidden;
+            }
+        }
+        &--rating {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            & .icon {
+                color: #ff6060;
+                height: 30px;
+            }
+        }
+    }
+    &__tags {
+        margin-top: 22px;
+        display: flex;
+        gap: 10px;
+        & span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 140px;
+            padding: 4px;
+            height: auto;
+            flex-shrink: 0;
+            background: $primary;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            overflow: hidden;
+        }
+    }
+    &__collapses {
+        display: flex;
+        width: 100%;
+        padding-top: 30px;
+        gap: 75px;
+        & p.hidden {
+            background: $secondary;
+            line-height: 0%;
+            
+        }
+        & p.visible {
+            background: $secondary;
+        }
+    }
+}
