@@ -17,8 +17,7 @@
     &__who {
         display: flex;
         flex-direction: column;
-        width: 20%;
-        border: 1px solid #e5e5e5;
+        width: 25%;
         gap: 20px;
         position: absolute;
         top: 0;
@@ -27,7 +26,6 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            border: 1px solid black;
             overflow: hidden;
             gap: 10px;
 
@@ -43,7 +41,6 @@
                 font-weight: 500;
                 width: 93px;
                 height: 53px;
-                border: 1px solid #ff6060;
                 overflow: hidden;
             }
         }
@@ -53,7 +50,6 @@
             justify-content: flex-end;
             gap: 10px;
             & .icon {
-                color: #ff6060;
                 height: 30px;
             }
         }
@@ -84,12 +80,11 @@
         width: 100%;
         padding-top: 30px;
         gap: 75px;
-        & p.hidden {
+        & div.hidden {
             background: $secondary;
             line-height: 0%;
-            
         }
-        & p.visible {
+        & div.visible {
             background: $secondary;
         }
     }

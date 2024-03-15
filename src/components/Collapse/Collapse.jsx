@@ -20,9 +20,9 @@ function Collapse({ text, title }) {
         <article className="collapse-container">
             <button onClick={toggleCollapse}>{title} <img className={buttonImgClass} src={arrow} alt="white arrow"></img></button>
             {/* Utilise la classe CSS déterminée dynamiquement */}
-            <p className={`collapse-content ${contentClass}`}>
+            <div className={`collapse-content ${contentClass}`}>
                 {text}
-            </p>
+            </div>
         </article>
     );
 }

@@ -1,8 +1,6 @@
-import "../Content/Rating.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./Content.scss";
 import Collapse from "../Collapse/Collapse";
+import Rating from "../Rating/Rating";
 
 function Content({
     titleDescription,
@@ -33,29 +31,25 @@ function Content({
                     <span>{hostName}</span>
                     <img src={hostPicture} alt="host-avatar" />
                 </div>
-                <div className="fiche-logement-content__who--rating">
-                    <FontAwesomeIcon className="icon" icon={faStar} />
-                    <FontAwesomeIcon className="icon" icon={faStar} />
-                    <FontAwesomeIcon className="icon" icon={faStar} />
-                </div>
+                <Rating rentalRating={rentalRating} />
             </div>
             <section className="fiche-logement-content__collapses">
-                    <Collapse
-                        className="fiche-logement-content__collapses--description"
-                        title={<h2>Description</h2>}
-                        text={<p>{rentalDesctiption}</p>}
-                    />
-                    <Collapse
-                        className="fiche-logement-content__collapses--equipments"
-                        title={<h2>Equipements</h2>}
-                        text={
-                            <ul>
-                                {rentalEquipment.map((equipment) => (
-                                    <li key={equipment}>{equipment}</li>
-                                ))}
-                            </ul>
-                        }
-                    />
+                <Collapse
+                    className="fiche-logement-content__collapses--description"
+                    title={<h2>Description</h2>}
+                    text={<p>{rentalDesctiption}</p>}
+                />
+                <Collapse
+                    className="fiche-logement-content__collapses--equipments"
+                    title={<h2>Equipements</h2>}
+                    text={
+                        <ul>
+                            {rentalEquipment.map((equipment) => (
+                                <li key={equipment}>{equipment}</li>
+                            ))}
+                        </ul>
+                    }
+                />
             </section>
         </div>
     );

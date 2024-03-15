@@ -28,12 +28,12 @@
     img.rotate {
         transform: rotate(-180deg);
     }
-    p.hidden {
+    div.hidden {
         @include slide-down;
         color: transparent;
 
     }
-    p.visible {
+    div.visible {
         @include slide-up;
         color: $primary;
     }
