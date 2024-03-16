@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./Fiche-Logement.scss";
 import Carousel from "../../components/Carousel/Carousel";
 import Content from "../../components/Content/Content";
@@ -24,16 +24,26 @@ function FicheLogement() {
         fetchData();
     }, []);
 
+    // Utilise le hook useParams pour récupérer l'ID de l'URL
     const { id } = useParams();
+    // Filtrer les données pour ne récupérer que la location correspondant à l'ID avec find en spécifiant que 
+    // l'ID doit être une chaîne de caractères car les id contiennent des lettres et des chiffres
     const findRentalByID = data.find((item) => String(item.id) === String(id));
-    // console.log('Found rental:', findRentalByID);
-    // console.log('ID from URL:', id);
-    // console.log('Data:', data);
+    
+    // Utilise le hook useNavigate pour naviguer vers une autre page
+    const navigate = useNavigate();
+
+    // Utilise le hook useEffect pour mettre à jour le titre de l'onglet avec l'ID de la location
+    // et naviguer vers la page d'erreur si findRentalByID est false
     useEffect(() => {
-        if (findRentalByID) {
-            document.title = `Fiche Logement - ${findRentalByID.id}`;
+        if (data.length > 0) {
+            if (findRentalByID) {
+                document.title = `Fiche Logement - ${findRentalByID.id}`;
+            } else {
+                navigate("*");
+            }
         }
-    }, [findRentalByID]);
+    }, [id, navigate, data]);
 
     return (
         <section className="fiche-logement-container">
@@ -42,7 +52,7 @@ function FicheLogement() {
                     <Carousel pictures={findRentalByID.pictures} />
                     <Content
                         titleDescription={findRentalByID.title}
-                        titleLocation = {findRentalByID.location}
+                        titleLocation={findRentalByID.location}
                         hostName={findRentalByID.host.name}
                         hostPicture={findRentalByID.host.picture}
                         rentalTags={findRentalByID.tags}
@@ -58,48 +68,3 @@ function FicheLogement() {
 
 export default FicheLogement;
 
-// import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
-// import "./Fiche-Logement.scss";
-// import Carousel from "../../components/Carousel/Carousel";
-
-// function FicheLogement() {
-//     const { id } = useParams();
-//     const [data, setData] = useState([]);
-
-//     useEffect(() => {
-//         const fetchData = async () => {
-//             const response = await fetch(
-//                 process.env.PUBLIC_URL + "/rentals.json"
-//             );
-//             const jsonData = await response.json();
-//             setData(jsonData);
-//         };
-//         fetchData();
-//     }, []);
-
-//     useEffect(() => {
-//         document.title = `Fiche Logement - ${id}`;
-//     }, [id]);
-
-//     // Filtrer les données pour ne récupérer que la location correspondant à l'ID dans l'URL
-//     const rental = data.find(item => item.id === id);
-
-//     return (
-//         <section className="fiche-logement-container">
-//             {rental && (
-//                 <>
-//                     <Carousel pictures={rental.pictures} />
-//                     <div className="fiche-logement-content">
-//                         <h1>{rental.title}</h1>
-//                         <p>{rental.location}</p>
-//                         <p>{rental.description}</p>
-//                         <p>ceci est l'id {rental.id}</p>
-//                     </div>
-//                 </>
-//             )}
-//         </section>
-//     );
-// }
-
-// export default FicheLogement;
