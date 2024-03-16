@@ -2,9 +2,8 @@ $max-width: 1240px;
 
 $primary: #ff6060;
 $secondary: #f6f6f6;
-$greyLight: #f7f7f7;
-$greyDark: #c4c4c4;
-$grey: #e3e3e3;
+$primary-text: #DC3838;
+
 
 // styles des banners
 
@@ -15,6 +14,9 @@ $grey: #e3e3e3;
     justify-content: center;
     position: relative;
     border-radius: 25px;
+    @media screen and (max-width: 768px) {
+        border-radius: 10px;
+    }
     &::before {
         content: "";
         position: absolute;
@@ -24,6 +26,14 @@ $grey: #e3e3e3;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.4);
     }
+    & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @media screen and (max-width: 768px) {
+            height: 115px;
+        }
+    }
 }
 
 // transitions des collapses
@@ -32,8 +42,6 @@ $grey: #e3e3e3;
     transition: 300ms ease-in;
     overflow: hidden;
     line-height: 0;
-    padding: 0 1em;
-    font-size: 1.8rem;
     opacity: 0.5;
     max-height: 0;
 }
@@ -42,16 +50,16 @@ $grey: #e3e3e3;
     transition: 300ms 300ms ease-out;
     overflow: hidden;
     line-height: 1.5;
-    font-size: 1.8rem;
-    padding: 22px 15px;
     opacity: 1;
     max-height: 1000px;
 }
     
-//styles des flèches de carousel
+//styles des conteneurs des flèches de carousel
 @mixin next-prev-arrow {
     width: 10%;
     height: 100%;
     background-color: transparent;
     position: absolute;
 }
+
+

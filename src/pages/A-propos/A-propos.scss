@@ -14,3 +14,13 @@
         gap: 30px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .about-container {
+        gap: 20px;
+        section {
+            padding: 0px 0px;
+            gap: 20px;
+        }
+    }
+}

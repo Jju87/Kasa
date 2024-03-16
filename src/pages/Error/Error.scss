@@ -14,13 +14,36 @@
         color: $primary;
         font-size: 3.6rem;
         font-weight: 500;
+        text-align: center;
+
     }
     &__home-link {
         padding-top: 40px;
         font-size: 1.8rem;
         font-weight: 500;
+        text-align: center;
+
         &:hover {
             text-decoration: underline;
         }
     }
+}
+
+@media screen and (max-width: 768px) {
+    .page-error {
+        gap: 90px;
+        padding-top:40px;
+        padding-bottom: 90px;
+        h1 {
+            font-size: 9.6rem;
+        }
+        p {
+            font-size: 1.8rem;
+        }
+        &__home-link {
+            padding-top: 20px;
+            font-size: 1.2rem;
+        }
+    }
+    
 }

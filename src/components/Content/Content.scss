@@ -12,7 +12,6 @@
     &__subtitle {
         color: #000;
         font-size: 1.8rem;
-        margin-top: 20px;
     }
     &__who {
         display: flex;
@@ -57,7 +56,9 @@
     &__tags {
         margin-top: 22px;
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
+        width: 70%;
         & span {
             display: flex;
             justify-content: center;
@@ -93,7 +94,7 @@
     }
 }
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 1024px) {
     .fiche-logement-content {
         & h1 {
             font-size: 2.2rem;
@@ -116,7 +117,6 @@
             }
         }
         &__tags {
-            flex-wrap: wrap;
             gap: 10px;
             & span {
                 width: 110px;
@@ -125,8 +125,61 @@
             }
         }
         &__collapses {
-            flex-direction: column;
             gap: 20px;
+            & div.hidden {
+                color: transparent;
+            }
+            & div.visible {
+                padding: 15px 8px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .fiche-logement-content {
+        & h1 {
+            font-size: 1.8rem;
+            width: 100%;
+        }
+        &__subtitle {
+            color: #000;
+            font-size: 1.4rem;
+        }
+        &__who {
+            margin-top: 20px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            &--host {
+                & img {
+                    width: 35px;
+                    height: 35px;
+                }
+                & span {
+                    width: 61px;
+                    font-size: 1.2rem;
+                }
+            }
+            &--rating {
+                & .icon {
+                    height: 1.8rem;
+                }
+            }
+        }
+        &__tags {
+            width: 100%;
+            & span {
+                font-size: 1rem;
+                padding: 2px;
+                border-radius: 5px;
+            }
+        }
+        &__collapses {
+            flex-direction: column;
+
         }
     }
 }

@@ -31,10 +31,63 @@
     div.hidden {
         @include slide-down;
         color: transparent;
-
+        font-size: 1.8rem;        
     }
     div.visible {
         @include slide-up;
-        color: $primary;
+        color: $primary-text;
+        font-size: 1.8rem;
+        font-weight: 500;
+        padding: 22px 15px;
+
+
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .collapse-container {
+        gap: 25px;
+        button {
+            height: 45px;
+            font-size: 1.8rem;
+            img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+        div.hidden {
+            font-size: 1.5rem
+
+    
+        }
+        div.visible {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .collapse-container {
+        gap: 20px;
+        button {
+            height: 35px;
+            font-size: 1.5rem;
+            padding: 10px 10px;
+            img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        div.hidden {
+            font-size: 1.3rem;
+
+    
+        }
+        div.visible {
+            font-size: 1.3rem;
+            padding: 15px 8px;
+
+
+        }
     }
 }

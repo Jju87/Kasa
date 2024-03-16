@@ -1,6 +1,6 @@
 header ul {
     width: 309px;
-    height: 34px;
+    height: auto;
     display: flex;
     justify-content: flex-end;
     gap: 57px;
@@ -12,4 +12,24 @@ header ul {
     & li:hover {
         text-decoration: underline;
     }
+}
+
+
+@media screen and (max-width: 1024px) {
+    header ul {
+        width: 255px;
+        gap: 45px;
+        font-size: 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    header ul {
+        width: 150px;
+        gap: 20px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+    
 }

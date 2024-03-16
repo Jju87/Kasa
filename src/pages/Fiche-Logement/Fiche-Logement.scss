@@ -5,3 +5,10 @@
     gap: 38px;
 
 }
+
+@media screen and (max-width: 768px){
+    .fiche-logement-container{
+        gap: 20px;
+    }
+    
+}

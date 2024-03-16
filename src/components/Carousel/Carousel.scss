@@ -44,7 +44,7 @@
     }
 }
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 1024px) {
     .carousel {
         height: 350px;
         &__arrow-left {
@@ -60,9 +60,10 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
     .carousel {
         height: 255px;
+        border-radius: 10px;
         &__arrow-left {
             &--icon {
                 width: 24px;
