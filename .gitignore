@@ -24,3 +24,5 @@ yarn-error.log*
 
 # fichiers CSS compilés
 *.css
+.css.map
+
