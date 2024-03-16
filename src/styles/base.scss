@@ -4,7 +4,6 @@
 html{
     font-size: 62.5%; /* 1rem = 10px */
 }
-
 div,
 span,
 applet,
@@ -81,7 +80,6 @@ body{
     overflow-x: hidden;
     font-size: 100%;
 }
-
 ol,
 ul {
     list-style: none;
@@ -90,7 +88,6 @@ a{
     text-decoration: none;
     color: inherit;
 }
-
 #root{
     margin: 0;
     padding: 0;
@@ -103,14 +100,11 @@ a{
     gap: 50px;
 }
 
-
 @media screen and (max-width: 1024px) {
     #root{
         padding-top: 30px;
         gap: 35px;
     }
-    
-    
 }
 
 @media screen and (max-width: 768px) {
@@ -118,5 +112,4 @@ a{
         padding-top: 20px;
         gap: 25px;
     }
-    
 }

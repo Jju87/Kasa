@@ -1,12 +1,11 @@
+// Variables globales
 $max-width: 1240px;
-
 $primary: #ff6060;
 $secondary: #f6f6f6;
 $primary-text: #DC3838;
 
 
-// styles des banners
-
+// styles des banners de la page d'accueil et de la page à propos
 @mixin banner {
     object-fit: cover;
     display: flex;
@@ -37,7 +36,6 @@ $primary-text: #DC3838;
 }
 
 // transitions des collapses
-
 @mixin slide-down{
     transition: 300ms ease-in;
     overflow: hidden;
@@ -45,7 +43,6 @@ $primary-text: #DC3838;
     opacity: 0.5;
     max-height: 0;
 }
-
 @mixin slide-up{
     transition: 300ms 300ms ease-out;
     overflow: hidden;
