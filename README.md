@@ -1,6 +1,6 @@
 # Kasa Website Redesign Project
 
-<img src="./src/assets/images/logo.svg" alt="Description de l'image" width="300">
+<img src="./src/assets/images/logo.svg" alt="Description de l'image" width="300" style="fill: #FF6060;">
 
 ## Overview
 
