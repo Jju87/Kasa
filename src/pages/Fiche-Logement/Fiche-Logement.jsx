@@ -5,10 +5,6 @@ import "./Fiche-Logement.scss";
 import Carousel from "../../components/Carousel/Carousel";
 import Content from "../../components/Content/Content";
 function FicheLogement() {
-    // Utilise le hook useEffect pour mettre à jour le titre de l'onglet
-    useEffect(() => {
-        document.title = `Fiche Logement`;
-    }, []);
 
     const [data, setData] = useState([]);
 

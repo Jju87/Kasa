@@ -1,16 +1,86 @@
 @import "../../styles/variables.scss";
 
+/* Animations pour le défilement des images suivantes */
+@keyframes slideInNext {
+    0% {
+        transform: translateX(100%) scale(1);
+    
+    }
+    50% {
+        transform: translateX(0) scale(0.97);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes slideInPrev {
+    0% {
+        transform: translateX(-100%) scale(1);
+    }
+    50% {
+        transform: translateX(0) scale(0.97);
+    }
+    100% {
+        transform: translate(0) scale(1);
+    }
+}
+
+/* Animations pour le défilement des image précédentes */
+@keyframes slideOutNext {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    50%{
+        transform: translateX(-100%) scale(0.97);}
+    100% {
+        transform: translateX(-100%) scale(0);
+    }
+}
+
+@keyframes slideOutPrev {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        transform: translateX(100%) scale(0.97);
+    }
+    100% {
+        transform: translateX(100%) scale(0);
+    }
+}
+
 .carousel {
     width: 100%;
     position: relative;
     height: 415px;
     overflow: hidden;
     border-radius: 25px;
+    user-select: none;
     &__picture {
+        box-sizing: content-box;
+        position: absolute;
+        top:0;
+        left: -5px;
+        right: -5px;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: ease-in-out 0.5s;
+        border-radius: 25px;
+        &.next {
+            animation: slideOutPrev 1000ms ease forwards;
+        }
+        &.prev {
+            animation: slideOutNext 1000ms ease forwards;
+        }
+        &.active.next {
+            animation: slideInNext 1000ms ease forwards;
+
+        }
+        &.active.prev {
+            animation: slideInPrev 1000ms ease forwards;
+
+        }
     }
     &__arrow-left {
         @include next-prev-arrow;
@@ -21,6 +91,9 @@
         align-items: center;
         &:hover {
             cursor: pointer;
+        }
+        &:active {
+            color: $primary;
         }
         &--icon {
             height: 81px;

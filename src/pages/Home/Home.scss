@@ -1,5 +1,14 @@
 @import "../../styles/variables.scss";
 
+@keyframes Appear {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -18,6 +27,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: Appear 300ms ease-in-out forwards;
             @media screen and (max-width: 768px) {
                 content: "Chez vous,\Apartout et ailleurs";
                 white-space: pre;
@@ -25,7 +35,6 @@
                 width: 100%;
                 justify-content: start;
                 padding-left: 16px;
-                
             }
             }
     }

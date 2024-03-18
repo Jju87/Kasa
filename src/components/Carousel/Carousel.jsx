@@ -1,33 +1,62 @@
 import React, { useState, useEffect } from "react";
-import arrow from "../../assets/images/Vector.svg";
 import "../Carousel/Carousel.scss";
 
 function Carousel({ id, pictures }) {
+    const [prevIndex, setPrevIndex] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [key, setKey] = useState(Date.now()); // Utiliser Date.now() pour générer une clé unique lors de la première initialisation
+    const [direction, setDirection] = useState("next");
+
+    const nextImage = () => {
+        const newIndex = (currentIndex + 1) % pictures.length;
+        setPrevIndex(currentIndex);
+        setCurrentIndex(newIndex);
+        setDirection("next");
+    };
 
     const prevImage = () => {
-        setCurrentIndex(
-            (prevIndex) => (prevIndex - 1 + pictures.length) % pictures.length
-        );
-    };
-    const nextImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % pictures.length);
+        const newIndex = (currentIndex - 1 + pictures.length) % pictures.length;
+        setPrevIndex(currentIndex);
+        setCurrentIndex(newIndex);
+        setDirection("prev");
     };
     // Utilise le hook useEffect pour changer d'image toutes les 4 secondes
     useEffect(() => {
-        const timer = setInterval(nextImage, 8000);
-        // Nettoie le timer
+        const timer = setInterval(() => {
+            setDirection("next");
+            setTimeout(() => {
+                nextImage();
+                setPrevIndex(null);
+            }, 300); // Utilise setTimeout pour attendre que la transition CSS soit terminée
+        }, 6000); // Utilise setInterval pour changer d'image toutes les 6 secondes
+
         return () => {
-            clearInterval(timer);
+            clearInterval(timer);  
         };
-    }, []);
+    }, [currentIndex, pictures.length]);
+
+    useEffect(() => {
+        setKey(Date.now()); // Utiliser Date.now() pour générer une clé unique à chaque changement d'image
+        // ce qui permet de procéder aux transitions CSS
+    }, [currentIndex]);
 
     return (
         <div key={id} className="carousel">
             <img
-                className="carousel__picture"
+            // si prevIndex n'est pas null, affiche l'image précédente, sinon affiche l'image courante et la key pour générer une clé unique avec date.now()
+                key={pictures[prevIndex !== null ? prevIndex : currentIndex] + key} 
+                className={`carousel__picture ${
+                    direction === "next" ? "prev" : "next"  
+                }`}
+                // si prevIndex n'est pas null, affiche l'image précédente, sinon affiche l'image courante
+                src={pictures[prevIndex !== null ? prevIndex : currentIndex]}
+                alt="previous carousel"
+            />
+            <img
+                key={pictures[currentIndex] + key}
+                className={`carousel__picture active ${direction}`}
                 src={pictures[currentIndex]}
-                alt="carousel"
+                alt="current carousel"
             />
             <div className="carousel__arrow-left" onClick={prevImage}>
                 <svg
