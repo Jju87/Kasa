@@ -6,6 +6,9 @@ function Carousel({ id, pictures }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [key, setKey] = useState(Date.now()); // Utiliser Date.now() pour générer une clé unique lors de la première initialisation
     const [direction, setDirection] = useState("next");
+    const [counter, setCounter] = useState(0);
+
+
 
     const nextImage = () => {
         const newIndex = (currentIndex + 1) % pictures.length;
@@ -40,6 +43,11 @@ function Carousel({ id, pictures }) {
         // ce qui permet de procéder aux transitions CSS
     }, [currentIndex]);
 
+    // console.log(currentIndex)
+    // console.log(pictures.length)
+
+
+
     return (
         <div key={id} className="carousel">
             <img
@@ -53,13 +61,12 @@ function Carousel({ id, pictures }) {
                 alt="previous carousel"
             />
             <img
-                key={pictures[currentIndex] + key}
+                key={pictures[currentIndex]}
                 className={`carousel__picture active ${direction}`}
                 src={pictures[currentIndex]}
                 alt="current carousel"
             />
-            <div className="carousel__arrow-left" onClick={prevImage}>
-                <svg
+            <div className={`${pictures.length > 1 ? "carousel__arrow-left" : "carousel__hidden"}`} onClick={prevImage}>                <svg
                     className="carousel__arrow-left--icon"
                     width="48"
                     height="80"
@@ -76,7 +83,7 @@ function Carousel({ id, pictures }) {
                     </g>
                 </svg>
             </div>
-            <div className="carousel__arrow-right" onClick={nextImage}>
+            <div className={`${pictures.length > 1 ? "carousel__arrow-right" : "carousel__hidden"}`} onClick={nextImage}>
                 <svg
                     className="carousel__arrow-right--icon"
                     width="48"
@@ -94,6 +101,10 @@ function Carousel({ id, pictures }) {
                     </g>
                 </svg>
             </div>
+            <span className={`${pictures.length > 1 ? "carousel__counter" : "carousel__hidden"}`}>
+                {currentIndex + 1} / {pictures.length}
+            </span>
+
         </div>
     );
 }
