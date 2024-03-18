@@ -42,12 +42,9 @@ function Carousel({ id, pictures }) {
         setKey(Date.now()); // Utiliser Date.now() pour générer une clé unique à chaque changement d'image
         // ce qui permet de procéder aux transitions CSS
     }, [currentIndex]);
-
     // console.log(currentIndex)
     // console.log(pictures.length)
-
-
-
+    
     return (
         <div key={id} className="carousel">
             <img

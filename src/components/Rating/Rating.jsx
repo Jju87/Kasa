@@ -8,7 +8,7 @@ function Rating ({rentalRating}){
     <div className="fiche-logement-content__who--rating">
     {[...Array(5)].map((star, i) => {
         const ratingValue = i + 1;
-        console.log("voici le score:" + rentalRating)
+        // console.log("voici le score:" + rentalRating)
 
         return (
             <FontAwesomeIcon
