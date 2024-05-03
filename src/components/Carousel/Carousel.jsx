@@ -50,6 +50,8 @@ function Carousel({ id, pictures }) {
             <img
             // si prevIndex n'est pas null, affiche l'image précédente, sinon affiche l'image courante et la key pour générer une clé unique avec date.now()
                 key={pictures[prevIndex !== null ? prevIndex : currentIndex] + key} 
+                // le state direction permet de changer la classe CSS pour afficher l'image précédente ou suivante,
+                // ici, si direction est égal à next, affiche l'image précédente, sinon affiche l'image suivante
                 className={`carousel__picture ${
                     direction === "next" ? "prev" : "next"  
                 }`}

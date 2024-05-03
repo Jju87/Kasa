@@ -8,7 +8,7 @@ function Footer(){
                 <use xlinkHref={kasaLogo + "#logo"}></use>
             </svg>
             <p>
-            © 2024 Kasa. All rights reserved
+            © 2024 Kasa. Copyright Julien Gardier
             </p>
         </footer>
     )

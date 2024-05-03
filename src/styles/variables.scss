@@ -38,18 +38,22 @@ $primary-text: #DC3838;
 
 // transitions des collapses
 @mixin slide-down{
-    transition: 300ms ease-in;
+    transition: 150ms ease-in;
     overflow: hidden;
-    line-height: 0;
-    opacity: 0.5;
-    max-height: 0;
+    opacity: 0;
+    height: 0;
+    transform: translateY(-270px);
+    visibility:hidden;
+    z-index: 1;
 }
 @mixin slide-up{
-    transition: 300ms 300ms ease-out;
+    transition: 350ms ease-out;
     overflow: hidden;
-    line-height: 1.5;
     opacity: 1;
-    max-height: 1000px;
+    height: max-content;
+    transform: translateY(0);
+    visibility: visible;
+    z-index: 1;
 }
     
 //styles des conteneurs des flèches de carousel
