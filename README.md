@@ -20,6 +20,6 @@ As part of my training, I was tasked with redesigning the Kasa website. The scen
 -   **React Routing:** Implemented React Router to manage navigation between different pages of the website.
 -   **Collapse Component:** Implemented a Collapse component with CSS animations as specified by the designer. This component was used for dropdown menus throughout the website.
 
-To view the website, visit kasa-rose.vercel.app
+To view the website, visit <kasa-rose.vercel.app>
 
 
